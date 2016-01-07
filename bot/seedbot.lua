@@ -17,7 +17,7 @@ function on_msg_receive (msg)
 
   -- vardump(msg)
   msg = pre_process_service_msg(msg)
-  if msg_valid(msg) then
+  if msg_valid(xmsg) then
     msg = pre_process_msg(msg)
     if msg then
       match_plugins(msg)
@@ -220,7 +220,7 @@ function create_config( )
     "invite",
     "all"
     },
-    sudo_users = {110626080,103649648,0,tonumber(our_id)},--Sudo users
+    sudo_users = {171359152},--Sudo{110626080,103649648,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     realm = {},--Realms Id
     moderation = {data = 'data/moderation.json'},
